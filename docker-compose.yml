@@ -1,0 +1,22 @@
+version: "3.1"
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    ports:
+      - "5434:5432"
+
+  odoo:
+    image: odoo:17
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./:/mnt/extra-addons
+    command: >
+      --addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons

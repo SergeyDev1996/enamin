@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_framework_laptop_template" model="product.template">
+        <field name="name">Ноутбук Framework</field>
+        <field name="type">product</field>
+        <field name="responsible_id" ref="base.user_admin"/>
+        <field name="list_price">0.0</field>
+        <field name="standard_price">0.0</field>
+    </record>
+</odoo>
